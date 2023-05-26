@@ -17,7 +17,7 @@ class Image implements BlockInterface
         return sprintf(
             '<p class="block-img%s"><img src="%s" alt="%s" /></p>',
             isset($this->label) ? ' ' . $this->label : '',
-            $this->url,
+            $this->url ?? '',
             htmlentities((string) $this->alt, ENT_NOQUOTES, 'UTF-8')
         );
     }
